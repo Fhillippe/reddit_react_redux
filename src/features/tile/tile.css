@@ -1,8 +1,18 @@
 .tile{
+    padding: 5px;
     width: 600px;
     height: auto;
     background-color: white;
     border-top: 1px solid grey;
     border-left: 1px solid grey;
-    border-right: 1px solid grey;  
+    border-right: 1px solid grey;
+    display: flex;
+    justify-content: space-between;
 }
+
+.rightSection{
+    align-self: center;
+}
+
+
+
