@@ -16,22 +16,25 @@ export const contentSlice = createSlice({
     initialState: {
         content : [],
         isContentLoading: false,
-        faileToLoadContent: false
+        failToLoadContent: false
     },
     extraReducers: (builder)=>{
         builder
             .addCase(loadContent.pending,(state)=>{
                 state.isContentLoading= true
-                state.faileToLoadContent= false
+                state.failToLoadContent= false
+                state.noResults= false
             })
             .addCase(loadContent.fulfilled,(state, {payload})=>{
+                const newContent = payload.data.children
                 state.isContentLoading= false
-                state.faileToLoadContent= false
-                state.content = payload.data.children
+                state.failToLoadContent= false
+                state.content = newContent
             })
             .addCase(loadContent.rejected,(state)=>{
                 state.isContentLoading= false
-                state.faileToLoadContent= true
+                state.failToLoadContent= true
+                state.noResults = false
             })
             
     }
@@ -39,4 +42,6 @@ export const contentSlice = createSlice({
 })
 
 export const selectContent = state => state.content.content
+export const isContentLoading = state => state.content.isContentLoading
+export const failToLoadContent = state => state.content.failToLoadContent
 export default contentSlice.reducer
