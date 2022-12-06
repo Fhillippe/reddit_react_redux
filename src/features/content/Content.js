@@ -18,7 +18,8 @@ export const Content =()=>{
         author={author}
         img={thumbnail}
         id={id}
-        subreddit={subreddit}/>
+        subreddit={subreddit}
+        onClickActive={true}/>
     })
 
     return (

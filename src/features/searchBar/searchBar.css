@@ -5,19 +5,15 @@
     display: flex;
     justify-content: center;
 }
-
 .searchBar{
     width: 250px;
     display: flex;
 }
-
 .searchBar:hover > input{
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 
 }
-
-
 .searchBar input{
     padding-left:  10px;
     height: 20px;
@@ -27,9 +23,6 @@
     background-color: lightgrey;
     border-radius: 10px;
 }
-
-
-
 .searchBar button{
     border: none;
     background-color: lightgrey;
